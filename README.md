@@ -26,11 +26,7 @@ I plan to implement a lot more features for Easy Media Vault to make it more use
   
 
 ### Running the Application
-1. In the [frontend](https://github.com/nickstoni/Easy-Media-Vault/tree/main/frontend) directory, run the following command to start both the backend and frontend servers concurrently:
-    ```sh
-    npm start
-    ```
-
+1. In the [frontend](https://github.com/nickstoni/Easy-Media-Vault/tree/main/frontend) directory, run the following command to start both the backend and frontend servers concurrently: `npm start`.
 2. Open your browser and navigate to `http://localhost:3000` to access the Easy Media Vault application.
 
 
