@@ -1,0 +1,143 @@
+(1)
+//
+:+ gnfa N_0
+Q={q1,q2,q3,q4,qs,qf}
+S={a,b}
+q0=qs
+F={qf}
+q1->q3:b
+q1:a
+q2->q4:b
+q2->q1:a
+q3:a
+q3->q2:b
+q4->q1:a
+q4:b
+qs->q1:\e
+q3->qf:\e
+q2->qf:\e
+done.
+//
+(2) Delete q1.
+//
+:fig table
+In # Out
+qs # q3
+q2 #
+q4 #
+done.
+//
+Preservation paths:
+qs->q1->q3:a*b
+q2->q1->q3:aa*b
+q4->q1->q3:aa*b
+//
+(3)
+//
+:+ gnfa N_1
+Q={q2,q3,q4,qs,qf}
+S={a,b}
+q0=qs
+F={qf}
+qs->q3:a*b
+q2->q3:aa*b
+q2->q4:b
+q3:a
+q3->q2:b
+q4->q3:aa*b
+q4:b
+q3->qf:\e
+q2->qf:\e
+done.
+//
+(4) Delete q3.
+//
+:fig table
+In # Out
+qs # q2
+q2 # qf
+q4 #
+done.
+//
+Preservation paths:
+qs->q3->q2:a*ba*b
+qs->q3->qf:a*ba*
+q2->q3->q2:aa*ba*b
+q2->q3->qf:aa*ba*
+q4->q3->q2:aa*ba*b
+q4->q3->qf:aa*ba*
+(5)
+//
+:+ gnfa N_2
+Q={q2,q4,qs,qf}
+S={a,b}
+q0=qs
+F={qf}
+qs->q2:a*ba*b
+qs->qf:a*ba*
+q2:aa*ba*b
+q2->q4:b
+q2->qf:aa*ba* \u \e
+q4->q2:aa*ba*b
+q4:b
+q4->qf:aa*ba*
+done.
+//
+(6) Delete q2.
+//
+:fig table
+In # Out
+qs # q4
+q4 # qf
+done.
+//
+Preservation paths:
+qs->q2->q4:a*ba*b(aa*ba*b)*b
+qs->q2->qf:a*ba*b(aa*ba*b)*aa*ba*\u\e
+q4->q2->q4:aa*ba*b(aa*ba*b)*b
+q4->q2->qf:aa*ba*b(aa*ba*b)*aa*ba*\u\e
+(7)
+//
+:+ gnfa N3
+Q={q4,qs,qf}
+S={a,b}
+q0=qs
+F={qf}
+qs->q4:a*ba*b(aa*ba*b)*b
+qs->qf:a*ba*b\u(aa*ba*b)*aa*ba*\u\e
+q4:b
+q4->qf:aa*ba*\uaa*ba*b(aa*ba*b)*aa*ba*\u\e
+done.
+//
+(8) Delete q4.
+//
+:fig table
+In # Out
+qs # qf
+done.
+//
+Preservation paths:
+qs->q4->qf:a*ba*b(aa*ba*b)*bb*aa*ba\uaa*ba*b(aa*ba*b)*aa*ba\u\e
+
+(9)
+//:+ gnfa N_4
+//Q={qs,qf}
+//S={a,b}
+//q0=qs
+//F={qf}
+//qs->qf:a*ba*b(aa*ba*b)*bb*aa*ba\uaa*ba*b(aa*ba*b)*aa*ba\u\e\ua*ba*b(aa*ba*b)*aa*ba*⋃ε
+//done.
+
+(10)
+
+(11)
+:+ nfa NFA
+Q={q0,q1}
+S={a,b}
+d(q0,a)={q0}
+d(q0,b)={q1}
+d(q1,a)={q1}
+d(q1,b)={q1}
+q0=q0
+F={q1}
+done.
