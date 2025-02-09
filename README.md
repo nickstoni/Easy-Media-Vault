@@ -28,5 +28,7 @@ I plan to implement a lot more features for Easy Media Vault to make it more use
 ### Running the Application
 1. In the [frontend](https://github.com/nickstoni/Easy-Media-Vault/tree/main/frontend) directory, run the following command to start both the backend and frontend servers concurrently: `npm start`.
 2. Open your browser and navigate to `http://localhost:3000` to access the Easy Media Vault application.
+3. Upload a file and retrieve the IPFS CID.
+4. Use a gateway (Ex: `jade-sophisticated-junglefowl-810.mypinata.cloud`) and input the following URL in a browser to retrieve the data: `{gateway}/ipfs/{cid}`.
 
 
