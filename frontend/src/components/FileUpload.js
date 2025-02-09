@@ -43,7 +43,7 @@ const FileUpload = () => {
 
         setUploading(true);
         try {
-            const response = await axios.post('http://localhost:5001/upload', formData);
+            const response = await axios.post('http://ec2-3-22-42-223.us-east-2.compute.amazonaws.com:5001/upload', formData);
             setIpfsHash(response.data.cid);
             setError('');
             setSuccess(true);
