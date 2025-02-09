@@ -19,4 +19,18 @@ I gained valuable knowledge into decentralized storage, API integration, and sec
 ## What's next for Easy Media Vault!
 I plan to implement a lot more features for Easy Media Vault to make it more useful and better looking for its users. For example: a whole interface to see your uploaded files, to manage those files, and even more return options other than just the IPFS CID.
 
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Install the dependencies: using `npm install`
+  
+
+### Running the Application
+1. In the [frontend](http://_vscodecontentref_/1) directory, run the following command to start both the backend and frontend servers concurrently:
+    ```sh
+    npm run start
+    ```
+
+2. Open your browser and navigate to `http://localhost:5001` to access the Easy Media Vault application.
+
 
